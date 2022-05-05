@@ -1,6 +1,6 @@
 import { darkTheme, globalStyles, styled } from '../stitches.config'
 import URLShortener from '@/components/URLShortener';
-import useTheme from '@/hooks/useTheme';
+import useTheme from './hooks/useTheme';
 
 // Components
 import Navbar from '@/components/Navbar';
@@ -14,12 +14,12 @@ const MainContainer = styled('main', {
 })
 
 const App = () => {
-  const [theme, toggleDark] = useTheme();
+  const [theme, setTheme] = useTheme();
   globalStyles();
 
   return (
     <MainContainer className={theme === 'dark' ? darkTheme : ''}>
-      <Navbar current={theme} switcher={toggleDark} />
+      <Navbar current={theme} switcher={setTheme} />
       <URLShortener />
     </MainContainer>
   )

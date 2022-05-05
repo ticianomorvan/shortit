@@ -23,7 +23,9 @@ const URLShortener = () => {
       <input {...register('url')} />
       <button type="submit">Submit</button>
 
-      <a href={`https://1pt.co/${shortURL}`} target="_blank" rel="noreferrer">Your link</a>
+      { shortURL && (
+        <a href={`https://1pt.co/${shortURL}`} target="_blank" rel="noreferrer">Your link</a>
+      )}
     </form>
   )
 }
