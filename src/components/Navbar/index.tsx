@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import { styled } from 'root/stitches.config';
 import { FaGithub, FaMoon, FaSun } from 'react-icons/fa';
+import { ThemeContext } from '@/App';
 
 const NavbarContainer = styled('nav', {
   width: '100%',
+  position: 'fixed',
   display: 'flex',
   background: '$primary800',
   justifyContent: 'space-between',
@@ -53,7 +56,9 @@ const ThemeSwitch = styled('button', {
   cursor: 'pointer'
 })
 
-const Navbar = ({ current, switcher }: { current: string, switcher: () => void }) => {
+const Navbar = ({ switcher }: { switcher: () => void }) => {
+  const theme = useContext(ThemeContext);
+
   return (
     <NavbarContainer>
       <ApplicationName>
@@ -64,9 +69,15 @@ const Navbar = ({ current, switcher }: { current: string, switcher: () => void }
           type="button"
           onClick={switcher}
         >
-          { current === 'dark' ? <SunIcon /> : <MoonIcon /> }
+          { theme === 'dark' ? <SunIcon /> : <MoonIcon /> }
         </ThemeSwitch>
-        <GitHubLogo />
+        <a
+          href="https://github.com/Ti7oyan/shortit"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <GitHubLogo />
+        </a>
       </div>
     </NavbarContainer>
   )

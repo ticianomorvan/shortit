@@ -6,16 +6,21 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
     "@stitches/react": "^1.2.8",
     "@types/jest": "^27.5.0",
     "axios": "^0.27.2",
     "jest": "^28.0.3",
+    "joi": "^17.6.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.30.0",
+    "react-hot-toast": "^2.2.0",
     "react-icons": "^4.3.1"
   },
   "devDependencies": {

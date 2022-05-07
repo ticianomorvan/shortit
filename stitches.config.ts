@@ -9,10 +9,12 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      background: 'white',
+      background: '#ddd',
       darkGray: '#393E41',
       gray: '#D3D0CB',
       lightGray: '#E7E5DF',
+
+      // Color palette
       primary400: '#44BBA4',
       primary500: '#3CA191',
       primary600: '#34877D',
@@ -22,7 +24,11 @@ export const {
       secondary500: '#D19E3A',
       secondary600: '#BC8134',
       secondary700: '#A6642D',
-      secondary800: '#904726'
+      secondary800: '#904726',
+
+      // Elements
+      text: 'black',
+      title: '$primary700'
     }
   },
   media: {
@@ -38,7 +44,9 @@ export const {
 
 export const darkTheme = createTheme('dark', {
   colors: {
-    background: '$darkGray'
+    background: '$darkGray',
+    title: '$secondary400',
+    text: 'white',
   }
 })
 
